@@ -85,6 +85,14 @@ function playDrawPoker() {
       drawButton.disabled = true;         // Turn off the Draw button
       standButton.disabled = true;        // Turn off the Stand Button
       
+      //replace cards marked to be discarded
+      for(let i=0;i<cardImages.length;i++){
+         if(cardImages[i].src.includes("cardback.png")){
+            //Replace card and iamge on table
+            myHand.replaceCard(i,myDeck);
+            cardImages[i].src=myHand.cards[i].cardImage();
+         }
+      }
 
 
    });
