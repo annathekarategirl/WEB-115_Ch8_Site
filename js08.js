@@ -50,7 +50,10 @@ function playDrawPoker() {
             myDeck.shuffle();
             //deal 5 cards
             myDeck.dealTo(myHand);
-            console.log(myDeck,myHand)
+            //Display card iamges on table
+            for(let i=0;i<cardImages.length;i++){
+               cardImages[i].src=myHand.cards[i].cardImage()
+            }
          }
       }else{
          statusBox.textContent="Insufficient Funds"
