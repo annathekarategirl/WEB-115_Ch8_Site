@@ -44,6 +44,14 @@ function playDrawPoker() {
          statusBox.textContent = "";        // Erase any status messages
          //reduce bank by size of the bet
          bankBox.value=pokerGame.placeBet();
+         //get a new deck if less than 10 caards
+         if (myDeck.cards.length<10){
+            myDeck=new pokerDeck();
+            myDeck.shuffle();
+            //deal 5 cards
+            myDeck.dealTo(myHand);
+            console.log(myDeck,myHand)
+         }
       }else{
          statusBox.textContent="Insufficient Funds"
       }
