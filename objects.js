@@ -11,6 +11,8 @@
       Filename:       objects.js
  */
 
+//object defining poker game
+let pokerGame={currentBank: null, currentBet: null};
 
 
 
