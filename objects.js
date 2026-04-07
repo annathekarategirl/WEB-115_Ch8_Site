@@ -20,7 +20,11 @@ let pokerGame={
       return this.currentBank;
    }
 };
-
+//constructor func for poker cards
+function pokerCard(cardSuit,cardRank){
+   this.suit=cardSuit;
+   this.rank=cardRank
+}
 
 
 
