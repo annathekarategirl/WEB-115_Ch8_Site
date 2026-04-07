@@ -25,6 +25,7 @@ function pokerCard(cardSuit,cardRank){
    this.suit=cardSuit;
    this.rank=cardRank
 }
+pokerCard.prototype.cardImage=function(){return this.rank+"_"+this.suit+".png"}
 
 function pokerDeck() {
    //list suits and ranks
