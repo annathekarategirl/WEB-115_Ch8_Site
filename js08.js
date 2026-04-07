@@ -59,7 +59,17 @@ function playDrawPoker() {
          //Display card iamges on table
          for(let i=0;i<cardImages.length;i++){
             // console.log(i);
-            cardImages[i].src=myHand.cards[i].cardImage()
+            cardImages[i].src=myHand.cards[i].cardImage();
+            //flip card when image click
+            cardImages[i].onclick=function(){
+               if(this.src.includes("cardback.png")){
+                  //show front of card
+                  this.src=myHand.cards[i].cardImage();
+               }else{
+                  //show back
+                  this.src="cardback.png"
+               }
+            }
          }
       }else{
          statusBox.textContent="Insufficient Funds"
