@@ -39,7 +39,11 @@ function pokerDeck() {
    this.shuffle=function(){
    this.cards.sort(function(){return 0.5-Math.random();})
 }
-}
+this.dealTo=function(pokerHand){
+   let cardsDealt=pokerHand.cards.length;
+   pokerHand.cards=this.cards.splice(0,cardsDealt);
+};
+};
 //constructor func for poker hands
 function pokerHand(handlength){
    this.cards=new Array(handlength);
