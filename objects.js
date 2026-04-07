@@ -36,6 +36,9 @@ function pokerDeck() {
       for(let j=0;j<13;j++){//add poekrcard obj
          this.cards.push(new pokerCard(suits[i],ranks[j]))}
    }
+   this.shuffle=function(){
+   this.cards.sort(function(){return 0.5-Math.random();})
+}
 }
 
 
