@@ -35,7 +35,10 @@ function playDrawPoker() {
    betSelection.onchange=function(){pokerGame.currentBet=parseInt(this.value)}
    
       dealButton.addEventListener("click", function() {
+         console.log("test");
       if (pokerGame.currentBank >= pokerGame.currentBet) {
+                  console.log("test2");
+
          // Enable the Draw and Stand buttons after the initial deal
          dealButton.disabled = true;        // Turn off the Deal button
          betSelection.disabled = true;      // Turn off the Bet Selection list
@@ -45,15 +48,18 @@ function playDrawPoker() {
          //reduce bank by size of the bet
          bankBox.value=pokerGame.placeBet();
          //get a new deck if less than 10 caards
-         if (myDeck.cards.length<10){
+         if (myDeck.cards.length<10){ 
+
             myDeck=new pokerDeck();
             myDeck.shuffle();
-            //deal 5 cards
-            myDeck.dealTo(myHand);
-            //Display card iamges on table
-            for(let i=0;i<cardImages.length;i++){
-               cardImages[i].src=myHand.cards[i].cardImage()
-            }
+
+         }
+         //deal 5 cards
+         myDeck.dealTo(myHand);
+         //Display card iamges on table
+         for(let i=0;i<cardImages.length;i++){
+            // console.log(i);
+            cardImages[i].src=myHand.cards[i].cardImage()
          }
       }else{
          statusBox.textContent="Insufficient Funds"
