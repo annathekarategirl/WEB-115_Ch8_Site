@@ -39,7 +39,7 @@ function playDrawPoker() {
          statusBox.textContent = "";        // Erase any status messages
          
 
-   });
+   }});
    
    
    drawButton.addEventListener("click", function() {
