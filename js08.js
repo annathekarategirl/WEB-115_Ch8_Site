@@ -28,6 +28,8 @@ function playDrawPoker() {
    //create a deck of shuffled cards
    let myDeck=new pokerDeck();
    myDeck.shuffle();
+   //create an empty poke hand obj
+   let myHand= new pokerHand(5);
    //display current bank value
    bankBox.value=pokerGame.currentBank
    betSelection.onchange=function(){pokerGame.currentBet=parseInt(this.value)}
