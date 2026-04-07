@@ -40,7 +40,10 @@ function pokerDeck() {
    this.cards.sort(function(){return 0.5-Math.random();})
 }
 }
-
+//constructor func for poker hands
+function pokerHand(handlength){
+   this.cards=new Array(handlength);
+}
 
 
 
