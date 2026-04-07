@@ -26,7 +26,17 @@ function pokerCard(cardSuit,cardRank){
    this.rank=cardRank
 }
 
-
+function pokerDeck() {
+   //list suits and ranks
+   let suits=["clubs","diamonds","hearts","spades"];
+   let ranks=["2","3","4",'5',"6","7","8","9","10","jack","queen","king","ace"];
+   this.cards=[];
+   //add card for combo
+   for(let i=0;i<4;i++){
+      for(let j=0;j<13;j++){//add poekrcard obj
+         this.cards.push(new pokerCard(suits[i],ranks[j]))}
+   }
+}
 
 
 
