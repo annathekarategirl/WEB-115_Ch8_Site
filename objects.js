@@ -59,6 +59,25 @@ pokerHand.prototype.getHandValue=function(){
    return handType(this)
 }
 
+function handType(pokerHand){
+   for(leti=0;i<pokerHand.cards.length;i++){
+      if(pokerHand.cards[i].rank==="ace"){
+         pokerHand.cards[i].rankValue=14;
+         //return text string descringing hand for draw poker
+         if(hasRoyalFlush()){return "Royal Flush";}
+         else if (hasStraightFlush()){return "Straight Flush";}
+         else if (hasFlush()){return "Flush";}
+         else if (hasStraight()){return "Straight";}
+         else{
+            let sets=hasSets();
+            if (sets==="Pair" || sets === "none") {sets="No Winner";}
+            return sets
+            
+         }
+      }
+   }
+}
+
 
 
 
